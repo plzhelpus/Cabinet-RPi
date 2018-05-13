@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv-safe": "^5.0.1",
+    "firebase": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/dotenv-safe": "^5.0.0",
+    "@types/node": "^10.0.8",
+    "prettier": "^1.12.1",
+    "typescript": "^2.8.3"
+  }
+}
