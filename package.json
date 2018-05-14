@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node ./build/app.js"
+    "start": "node ./build/app.js",
+    "lint": "tslint ./src/**"
   }
 }

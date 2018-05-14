@@ -1,17 +1,15 @@
-import * as config from "config";
 import * as firebase from "firebase";
 
+import * as config from "./config";
+
 firebase.initializeApp(config.firebase);
-console.log(config.firebase);
 
 const database = firebase.database();
+const rpiRef = database.ref("cabinets/" + config.RPi.id);
 
-console.log(config.RPi.id);
-
-const rootRef = database.ref();
-
-rootRef.once("value").then((snapshot) => {
-  console.log(snapshot.val());
-}).catch((error) => {
-  console.log(error);
-});
+rpiRef.on("child_changed", (snapshot) => {
+  if (snapshot !== null) {
+    console.log(snapshot.key);
+    console.log(snapshot.val());
+  }
+})
