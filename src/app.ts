@@ -1,5 +1,5 @@
-import * as config from './config';
-import * as firebase from 'firebase';
+import * as config from "config";
+import * as firebase from "firebase";
 
 firebase.initializeApp(config.firebase);
 console.log(config.firebase);
@@ -10,8 +10,8 @@ console.log(config.RPi.id);
 
 const rootRef = database.ref();
 
-rootRef.once("value").then(function (snapshot) {
+rootRef.once("value").then((snapshot) => {
   console.log(snapshot.val());
-}).catch(function (error) {
+}).catch((error) => {
   console.log(error);
 });
