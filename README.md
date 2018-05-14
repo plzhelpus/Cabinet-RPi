@@ -1,24 +1,15 @@
-# Cabinet
+# Cabinet - Raspberry Pi
 
-## Pre-requirement
+## Get started
 
-- raspbian image
-- pigpio
-- PyBluez
-- Python3
+```bash
+npm i
+```
 
-### Pigpio
+## Dependencies
 
-`sudo apt update`
-`sudo apt-get install pigpio python-pigpio python3-pigpio`
+- firebase
 
-`sudo pigpiod`
+## Set environment variables
 
-### Python
-
-`python3 -m venv --system-site-packages --upgrade [VENV_DIR]`
-
-### PyBluez
-
-`pip install pybluez`
-
+Copy `.env.example` file to `.env` file and replace values.
