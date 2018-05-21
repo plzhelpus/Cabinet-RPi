@@ -12,5 +12,4 @@ export const firebase = {
 
 export const RPi = {
   id: process.env.RPI_ID,
-  key: process.env.PRI_SECRET_KEY,
 };

@@ -1,15 +1,30 @@
 import * as firebase from "firebase";
-
+import * as five from "johnny-five";
+import Raspi from "raspi-io";
 import * as config from "./config";
 
-firebase.initializeApp(config.firebase);
+const board = new five.Board({
+    io: new Raspi(),
+});
 
-const database = firebase.database();
-const rpiRef = database.ref("cabinets/" + config.RPi.id);
+board.on("ready", function() {
+    firebase.initializeApp(config.firebase);
 
-rpiRef.on("child_changed", (snapshot) => {
-  if (snapshot !== null) {
-    console.log(snapshot.key);
-    console.log(snapshot.val());
-  }
-})
+    const pin = "GPIO18";
+    const servo = new five.Servo(pin);
+
+    const database = firebase.database();
+    const rpiRef = database.ref("cabinets/" + config.RPi.id);
+
+    rpiRef.on("child_changed", (snapshot) => {
+      if (snapshot !== null) {
+        console.log(snapshot.key);
+        console.log(snapshot.val());
+        if (snapshot.val()) {
+            servo.max();
+        } else {
+            servo.min();
+        }
+      }
+    });
+});
