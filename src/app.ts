@@ -5,6 +5,7 @@ import * as config from "./config";
 
 const board = new five.Board({
     io: new Raspi(),
+    repl: false,
 });
 
 board.on("ready", function() {
