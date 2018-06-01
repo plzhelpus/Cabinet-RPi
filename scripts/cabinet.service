@@ -3,7 +3,7 @@ Description=Smart Cabinet RPi service
 #Requires=After=mysql.service       # Requires the mysql service to run first
 
 [Service]
-ExecStart=/usr/bin/npm start
+ExecStart=/usr/bin/npm run start
 # Required on some systems
 WorkingDirectory=/home/pi/Cabinet-RPi/
 Restart=always
