@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "prestart": "npm run build",
     "start": "node ./build/app.js",
     "lint": "tslint ./src/**"
   }
